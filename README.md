@@ -1,64 +1,27 @@
-\\\Taha Rahman
+# Simple Calculator
 
-A simple Calculator
+## Overview
+This C++ program is a simple calculator that performs basic arithmetic operations such as addition, subtraction, multiplication, and division. It prompts the user to input two numbers and an operation (+, -, *, /), and then displays the result of the operation.
 
-CODE---------
+## Features
+- **Arithmetic Operations**: The program supports addition (+), subtraction (-), multiplication (*), and division (/) operations.
+- **Input Validation**: Input validation is performed to handle cases such as division by zero and invalid operations.
+- **Continuous Execution**: The program runs in a loop, allowing the user to perform multiple calculations without restarting the program.
 
-#include <iostream>
+## How to Use
+1. **Compile the Program**: Compile the C++ source code (`simple_calculator.cpp`) using a C++ compiler.
+    ```
+    g++ simple_calculator.cpp -o simple_calculator
+    ```
+2. **Run the Program**: Execute the compiled binary to run the simple calculator.
+    ```
+    ./simple_calculator
+    ```
+3. **Perform Calculations**: Enter two numbers and choose an operation (+, -, *, /) to perform the calculation. The result will be displayed.
 
-double performOperation(double num1, double num2, char operation)
-{
-    switch (operation)
-    {
-    case '+':
-        return num1 + num2;
-    case '-':
-        return num1 - num2;
-    case '*':
-    case 'x':
-    case 'X':
-        return num1 * num2;
-    case '/':
-        if (num2 == 0)
-        {
-            std::cout << "ERROR: Cannot divide by zero." << std::endl;
-            return 0;
-        }
-        else
-        {
-            return num1 / num2;
-        }
-    default:
-        std::cout << "Invalid operation." << std::endl;
-        return 0;
-    }
-}
+## Contributors
+- [Taha Rahman](https://github.com/TahaRahman1)
 
-int main()
-{
-    double firstNumber, secondNumber, result;
-    char operation;
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-    while (true)
-    {
-        std::cout << "Enter the first number: ";
-        std::cin >> firstNumber;
-        std::cout << "Enter the second number: ";
-        std::cin >> secondNumber;
-        std::cout << "Enter the operation (+, -, *, /): ";
-        std::cin >> operation;
-
-        result = performOperation(firstNumber, secondNumber, operation);
-
-        if (operation == '/' && secondNumber == 0)
-        {
-        
-        }
-        else
-        {
-            std::cout << firstNumber << " " << operation << " " << secondNumber << " = " << result << std::endl;
-        }
-    }
-
-    return 0;
-}
